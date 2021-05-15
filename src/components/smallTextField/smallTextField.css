@@ -1,0 +1,10 @@
+
+.small-text-field_small-font {
+    width: 20px;
+}
+
+.small-text-field_small-font input{
+    font-size: var(--small-font-size);
+    padding: 2px 0 2px;
+}
+
