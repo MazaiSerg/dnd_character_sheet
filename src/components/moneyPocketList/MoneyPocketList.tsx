@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 import { MoneyPocket } from "../moneyPocket/MoneyPocket";
 import { MoneyType } from "../../types/MoneyType";
 
-export function MoneyPockets() {
+export function MoneyPocketList() {
   const moneyPocketsList = Object.values(MoneyType).map((value, index) => {
     return (
       <Grid item key={index}>
@@ -16,6 +16,7 @@ export function MoneyPockets() {
       <Grid
         container
         direction="row"
+        wrap="nowrap"
         spacing={1}
       >
         {moneyPocketsList}
