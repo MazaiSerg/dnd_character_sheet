@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 
-import {SmallTextField} from "../smallTextField/SmallTextField";
+import { SmallTextField } from "../smallTextField/SmallTextField";
 
 import "../verticalSingleStat/smallButton.css";
 import "../../commonCSS/component_small-font.css";

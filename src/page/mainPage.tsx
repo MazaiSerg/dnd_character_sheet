@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Grid } from "@material-ui/core";
 
-import '../commonCSS/component_width-30-percents.css'
+import "../commonCSS/component_width-30-percents.css";
 
 import { InputForm } from "../components/inputForm/InputForm";
 import { BasicStatsList } from "../components/basicStatsList/BasicStatsList";

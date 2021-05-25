@@ -12,16 +12,16 @@ export function InputForm(props: Props) {
     <Grid
       item
       className={classNames("", props.className)}
-      >
-    <TextField
-      type="text"
-      size="small"
-      variant="filled"
-      placeholder={props.description}
-      helperText={props.description}
-      margin="dense"
     >
-    </TextField>
+      <TextField
+        type="text"
+        size="small"
+        variant="filled"
+        placeholder={props.description}
+        helperText={props.description}
+        margin="dense"
+      >
+      </TextField>
     </Grid>
   );
 }

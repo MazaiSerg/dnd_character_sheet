@@ -16,7 +16,7 @@ export const skillsData = [
   "Религия",
   "Скрытность",
   "Убеждение",
-  "Уход за животными",
+  "Уход за животными"
 ];
 
 export const savingThrowData = [
@@ -25,8 +25,8 @@ export const savingThrowData = [
   "Телосложения",
   "Интеллекта",
   "Мудрости",
-  "Харизмы",
-]
+  "Харизмы"
+];
 
 export const basicStatsData = [
   "Сила",
@@ -34,5 +34,5 @@ export const basicStatsData = [
   "Телосложение",
   "Интеллект",
   "Мудрость",
-  "Харизма",
-]
+  "Харизма"
+];

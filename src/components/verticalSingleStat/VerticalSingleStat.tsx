@@ -10,13 +10,13 @@ type Props = {
 }
 
 export function VerticalSingleStat(props: Props) {
-  const [statBonus, setStatBonus] = useState(0)
+  const [statBonus, setStatBonus] = useState(0);
 
   const handleChange = function(event: React.ChangeEvent<HTMLInputElement>) {
-    const statValue = parseInt(event.target.value)
-    const bonusValue = Math.floor((statValue - 10) / 2)
-    setStatBonus(() => bonusValue || 0)
-  }
+    const statValue = parseInt(event.target.value);
+    const bonusValue = Math.floor((statValue - 10) / 2);
+    setStatBonus(() => bonusValue || 0);
+  };
 
   return (
     <Grid

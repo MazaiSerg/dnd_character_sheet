@@ -64,7 +64,7 @@ export function DeathSavingThrow(props: Props) {
   };
 
   const CheckBoxType = props.throwType === SavingThrowType.success ? RedHeart : DarkHeart;
-  const Label = <label>{props.throwType === SavingThrowType.success ? "успехи" : "провалы"}</label>
+  const Label = <label>{props.throwType === SavingThrowType.success ? "успехи" : "провалы"}</label>;
 
   return (
     <Grid
