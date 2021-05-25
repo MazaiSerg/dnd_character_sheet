@@ -4,9 +4,12 @@
         "es2021": true
     },
     "extends": [
+        "prettier",
+        "react-app",
+        "eslint:recommended",
         "plugin:react/recommended",
-        "standard",
-        "prettier"
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -50,11 +53,15 @@
     "plugins": [
         "react",
         "@typescript-eslint",
-        "prettier"
+        "prettier",
+        "simple-import-sort"
     ],
     "rules": {
         // note you must disable the base rule as it can report incorrect errors
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"]
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/jsx-indent" : ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "indent": ["error", 4]
     }
 }
