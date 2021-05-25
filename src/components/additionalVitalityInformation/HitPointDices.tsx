@@ -15,7 +15,7 @@ export function HitPointDices() {
       <Grid item>
         <TextField
           variant="outlined"
-          size="medium"
+          size="small"
           label="Кость хитов"
         />
       </Grid>

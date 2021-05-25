@@ -14,4 +14,5 @@ code {
 
 :root {
     --small-font-size: 10px;
+    --basic-element-height: 20px;
 }

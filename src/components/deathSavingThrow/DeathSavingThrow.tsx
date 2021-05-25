@@ -4,6 +4,8 @@ import { Favorite, FavoriteBorder } from "@material-ui/icons";
 import { grey, red } from "@material-ui/core/colors";
 import { SavingThrowType } from "../../types/SavingThrowType";
 
+import "./DeathSavingThrow.css";
+
 const DarkHeart = withStyles({
   root: {
     color: grey[400],
@@ -62,26 +64,42 @@ export function DeathSavingThrow(props: Props) {
   };
 
   const CheckBoxType = props.throwType === SavingThrowType.success ? RedHeart : DarkHeart;
+  const Label = <label>{props.throwType === SavingThrowType.success ? "успехи" : "провалы"}</label>
 
   return (
     <Grid
       container
-      direction="row">
-      <FormControlLabel
-        control={<CheckBoxType checked={state.checkedFirst} onChange={handleChangeFirst} icon={<FavoriteBorder />}
-                               checkedIcon={<Favorite />} name="checkedFirst" />}
-        label=""
-      />
-      <FormControlLabel
-        control={<CheckBoxType checked={state.checkedSecond} onChange={handleChangeSecond} icon={<FavoriteBorder />}
-                               checkedIcon={<Favorite />} name="checkedSecond" />}
-        label=""
-      />
-      <FormControlLabel
-        control={<CheckBoxType checked={state.checkedThird} onChange={handleChangeThird} icon={<FavoriteBorder />}
-                               checkedIcon={<Favorite />} name="checkedThird" />}
-        label=""
-      />
+      justify="flex-end"
+      direction="row"
+      className="death-saving-throw_height"
+    >
+      <Grid item className="death-saving-throw_left-align">
+        {Label}
+      </Grid>
+      <Grid item>
+        <FormControlLabel
+          control={<CheckBoxType checked={state.checkedFirst} onChange={handleChangeFirst} icon={<FavoriteBorder />}
+                                 checkedIcon={<Favorite />} name="checkedFirst" />}
+          label=""
+          className="death-saving-throw_zero-padding"
+        />
+      </Grid>
+      <Grid item>
+        <FormControlLabel
+          control={<CheckBoxType checked={state.checkedSecond} onChange={handleChangeSecond} icon={<FavoriteBorder />}
+                                 checkedIcon={<Favorite />} name="checkedSecond" />}
+          label=""
+          className="death-saving-throw_zero-padding"
+        />
+      </Grid>
+      <Grid item>
+        <FormControlLabel
+          control={<CheckBoxType checked={state.checkedThird} onChange={handleChangeThird} icon={<FavoriteBorder />}
+                                 checkedIcon={<Favorite />} name="checkedThird" />}
+          label=""
+          className="death-saving-throw_zero-padding"
+        />
+      </Grid>
     </Grid>
   );
 }
