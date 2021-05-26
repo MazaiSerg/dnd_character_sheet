@@ -1,26 +1,26 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Grid } from "@material-ui/core";
 import { MoneyPocket } from "../moneyPocket/MoneyPocket";
 import { MoneyType } from "../../types/MoneyType";
 
-export function MoneyPocketList() {
-  const moneyPocketsList = Object.values(MoneyType).map((value, index) => {
+export function MoneyPocketList(): ReactElement {
+    const moneyPocketsList = Object.values(MoneyType).map((value, index) => {
+        return (
+            <Grid key={index} item>
+                <MoneyPocket moneyType={value} />
+            </Grid>
+        );
+    });
     return (
-      <Grid item key={index}>
-        <MoneyPocket moneyType={value} />
-      </Grid>
+        <div>
+            <Grid
+                container
+                direction="row"
+                spacing={1}
+                wrap="nowrap"
+            >
+                {moneyPocketsList}
+            </Grid>
+        </div>
     );
-  });
-  return (
-    <div>
-      <Grid
-        container
-        direction="row"
-        wrap="nowrap"
-        spacing={1}
-      >
-        {moneyPocketsList}
-      </Grid>
-    </div>
-  );
 }

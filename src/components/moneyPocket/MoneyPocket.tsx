@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { TextField } from "@material-ui/core";
 import { MoneyType } from "../../types/MoneyType";
 import classNames from "classnames";
@@ -9,13 +9,13 @@ type Props = {
   moneyType: MoneyType
 }
 
-export function MoneyPocket(props: Props) {
-  return (
-    <TextField
-      label={props.moneyType}
-      variant="outlined"
-      size="small"
-      className={classNames("medium-text-field_small-font ")}
-    />
-  );
+export function MoneyPocket(props: Props): ReactElement {
+    return (
+        <TextField
+            className={classNames("medium-text-field_small-font ")}
+            label={props.moneyType}
+            size="small"
+            variant="outlined"
+        />
+    );
 }
