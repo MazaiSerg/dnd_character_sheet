@@ -6,6 +6,6 @@
     padding: 0;
 }
 
-.death-saving-throw_left-align {
-    align-self: flex-start;
+.death-saving-throw_right-margin label{
+    margin-right: 10px;
 }

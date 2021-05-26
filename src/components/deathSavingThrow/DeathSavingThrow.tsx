@@ -73,7 +73,7 @@ export function DeathSavingThrow(props: Props): ReactElement {
             direction="row"
             justify="flex-end"
         >
-            <Grid item className="death-saving-throw_left-align">
+            <Grid item className="death-saving-throw_right-margin">
                 {Label}
             </Grid>
             <Grid item>
