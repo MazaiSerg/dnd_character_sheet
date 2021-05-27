@@ -1,0 +1,11 @@
+.death-saving-throw_height {
+    height: var(--basic-element-height);
+}
+
+.death-saving-throw_zero-padding span {
+    padding: 0;
+}
+
+.death-saving-throw_right-margin label{
+    margin-right: 10px;
+}

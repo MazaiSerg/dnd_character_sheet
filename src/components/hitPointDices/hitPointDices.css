@@ -1,0 +1,3 @@
+.text-field_short-padding .MuiInputLabel-outlined.MuiInputLabel-marginDense:not(.Mui-focused) {
+    transform: translate(8px, 12px);
+}

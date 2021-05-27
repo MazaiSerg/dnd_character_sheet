@@ -1,0 +1,13 @@
+.attributes-list_none-marker {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+}
+
+.attributes-list_solid-border {
+    border: 2px solid black;
+}
+
+.attributes-list_margin {
+    margin-top: 10px;
+}
