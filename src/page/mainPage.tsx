@@ -83,11 +83,13 @@ export function MainPage() : ReactElement {
                 </Grid>
                 <Grid item xs={4}>
                     <ColumnGrid>
-                        <ColumnGrid>
-                            <Grid item><BasicFightStats /></Grid>
-                            <Grid item><HitPoints /></Grid>
-                            <Grid item><AdditionalVitalityInformation /></Grid>
-                        </ColumnGrid>
+                        <Grid item>
+                            <ColumnGrid>
+                                <Grid item><BasicFightStats /></Grid>
+                                <Grid item><HitPoints /></Grid>
+                                <Grid item><AdditionalVitalityInformation /></Grid>
+                            </ColumnGrid>
+                        </Grid>
 
                         <Grid item>
                             <ColumnGrid>
