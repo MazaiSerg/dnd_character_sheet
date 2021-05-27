@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { Container, Grid } from "@material-ui/core";
 
-import "../commonCSS/component_width-30-percents.css";
+import "../commonCSS/component_width-33-percents.css";
 
 import { InputForm } from "../components/inputForm/InputForm";
 import { BasicStatsList } from "../components/basicStatsList/BasicStatsList";
@@ -43,12 +43,12 @@ export function MainPage(): ReactElement {
                                 container
                                 wrap="wrap"
                             >
-                                <InputForm className="component_width-30-percents" description="Класс" />
-                                <InputForm className="component_width-30-percents" description="Предыстория" />
-                                <InputForm className="component_width-30-percents" description="Уровень" />
-                                <InputForm className="component_width-30-percents" description="Раса" />
-                                <InputForm className="component_width-30-percents" description="Мировоззрение" />
-                                <InputForm className="component_width-30-percents" description="Опыт" />
+                                <InputForm className="component_width-33-percents" description="Класс" />
+                                <InputForm className="component_width-33-percents" description="Предыстория" />
+                                <InputForm className="component_width-33-percents" description="Уровень" />
+                                <InputForm className="component_width-33-percents" description="Раса" />
+                                <InputForm className="component_width-33-percents" description="Мировоззрение" />
+                                <InputForm className="component_width-33-percents" description="Опыт" />
                             </Grid>
                         </Grid>
                     </Grid>
