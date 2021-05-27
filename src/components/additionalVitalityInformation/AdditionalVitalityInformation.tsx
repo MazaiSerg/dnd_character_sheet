@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { Grid } from "@material-ui/core";
-import { HitPointDices } from "./HitPointDices";
+import { HitPointDices } from "../hitPointDices/HitPointDices";
 import { DeathSavingThoughts } from "./DeathSavingThoughts";
 
 export function AdditionalVitalityInformation(): ReactElement{
