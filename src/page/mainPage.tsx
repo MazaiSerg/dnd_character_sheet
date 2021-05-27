@@ -14,6 +14,7 @@ import { Weapons } from "../components/weapons/Weapons";
 import { BasicFightStats } from "../components/basicFightStats/BasicFightStats";
 import { HitPoints } from "../components/hitPoints/HitPoints";
 import { AdditionalVitalityInformation } from "../components/additionalVitalityInformation/AdditionalVitalityInformation";
+import { ColumnGrid } from "../components/columnGrid/ColumnGrid";
 
 export function MainPage() : ReactElement {
     return (
@@ -52,11 +53,7 @@ export function MainPage() : ReactElement {
                 wrap="nowrap"
             >
                 <Grid item>
-                    <Grid
-                        container
-                        direction="column"
-                        spacing={3}
-                    >
+                    <ColumnGrid>
                         <Grid item>
                             <Grid
                                 container
@@ -68,15 +65,12 @@ export function MainPage() : ReactElement {
                                     <BasicStatsList />
                                 </Grid>
                                 <Grid item xs={10}>
-                                    <Grid
-                                        container
-                                        direction="column"
-                                    >
+                                    <ColumnGrid>
                                         <HorizontalSingleStat key={123121312} statDescription="Вдохновение" />
                                         <HorizontalSingleStat key={1121312} statDescription="Бонус мастерства" />
                                         <AttributesList attributes={savingThrowData} title="Спасброски" />
                                         <AttributesList attributes={skillsData} title="Навыки" />
-                                    </Grid>
+                                    </ColumnGrid>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -85,56 +79,40 @@ export function MainPage() : ReactElement {
                             <HorizontalSingleStat key={1312} statDescription="пассивная мудрость (внимательность)" />
                         </Grid>
                         <MediumTextFieldGridItem fieldDescription="Прочие владения и языки" />
-                    </Grid>
+                    </ColumnGrid>
                 </Grid>
                 <Grid item xs={4}>
-                    <Grid
-                        container
-                        direction="column"
-                        spacing={3}
-                    >
-                        <Grid
-                            container
-                            direction="column"
-                            spacing={3}
-                        >
+                    <ColumnGrid>
+                        <ColumnGrid>
                             <Grid item><BasicFightStats /></Grid>
                             <Grid item><HitPoints /></Grid>
                             <Grid item><AdditionalVitalityInformation /></Grid>
-                        </Grid>
+                        </ColumnGrid>
 
                         <Grid item>
-                            <Grid
-                                container
-                                direction="column"
-                                spacing={2}
-                            >
+                            <ColumnGrid>
                                 <Grid item>
                                     <Weapons />
                                 </Grid>
                                 <MediumTextFieldGridItem fieldDescription="Заклинания" />
-                            </Grid>
+                            </ColumnGrid>
                         </Grid>
 
                         <Grid item><Inventory /></Grid>
-                    </Grid>
+                    </ColumnGrid>
                 </Grid>
                 <Grid item>
-                    <Grid
-                        container
-                        direction="column"
-                        spacing={3}
-                    >
+                    <ColumnGrid>
                         <Grid item>
-                            <Grid>
+                            <ColumnGrid spacing={1}>
                                 <MediumTextFieldGridItem fieldDescription="Черты характера" />
                                 <MediumTextFieldGridItem fieldDescription="Идеалы" />
                                 <MediumTextFieldGridItem fieldDescription="Привязанности" />
                                 <MediumTextFieldGridItem fieldDescription="Слабости" />
-                            </Grid>
+                            </ColumnGrid>
                         </Grid>
                         <MediumTextFieldGridItem fieldDescription="умения и особенности" />
-                    </Grid>
+                    </ColumnGrid>
                 </Grid>
             </Grid>
         </Container>

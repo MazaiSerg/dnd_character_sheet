@@ -2,17 +2,14 @@ import React, { ReactElement } from "react";
 import { Grid } from "@material-ui/core";
 import { MoneyPocketList } from "../moneyPocketList/MoneyPocketList";
 import { MediumTextFieldGridItem } from "../mediumTextField/MediumTextFieldGridItem";
+import { ColumnGrid } from "../columnGrid/ColumnGrid";
 
 export function Inventory(): ReactElement {
     return (
-        <Grid
-            container
-            direction="column"
-            spacing={1}
-        >
+        <ColumnGrid spacing={1}>
             <Grid item><MoneyPocketList /></Grid>
 
             <MediumTextFieldGridItem fieldDescription="Инвентарь" />
-        </Grid>
+        </ColumnGrid>
     );
 }

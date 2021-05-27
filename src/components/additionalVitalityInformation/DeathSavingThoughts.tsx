@@ -2,14 +2,12 @@ import React, { ReactElement } from "react";
 import { Grid } from "@material-ui/core";
 import { DeathSavingThrow } from "../deathSavingThrow/DeathSavingThrow";
 import { SavingThrowType } from "../../types/SavingThrowType";
+import { ColumnGrid } from "../columnGrid/ColumnGrid";
 
 export function DeathSavingThoughts(): ReactElement {
 
     return (
-        <Grid
-            container
-            direction="column"
-        >
+        <ColumnGrid spacing={0}>
             <Grid item>
                 <DeathSavingThrow throwType={SavingThrowType.success} />
             </Grid>
@@ -21,6 +19,6 @@ export function DeathSavingThoughts(): ReactElement {
             <Grid item>
                 Спасброски от смерти
             </Grid>
-        </Grid>
+        </ColumnGrid>
     );
 }
