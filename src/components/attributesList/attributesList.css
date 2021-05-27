@@ -8,6 +8,6 @@
     border: 2px solid black;
 }
 
-.attributes-list_margin {
-    margin-top: 10px;
+.attributes-list_margin li {
+    margin: 0 2px 5px;
 }

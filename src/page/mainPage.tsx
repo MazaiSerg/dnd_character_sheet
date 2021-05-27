@@ -58,7 +58,6 @@ export function MainPage(): ReactElement {
                         container
                         direction="row"
                         justify="space-between"
-                        wrap="nowrap"
                     >
                         <Grid item>
                             <ColumnGrid>
@@ -73,18 +72,26 @@ export function MainPage(): ReactElement {
                                             <BasicStatsList />
                                         </Grid>
                                         <Grid item xs={10}>
-                                            <ColumnGrid>
-                                                <HorizontalSingleStat key={123121312} statDescription="Вдохновение" />
-                                                <HorizontalSingleStat key={1121312} statDescription="Бонус мастерства" />
-                                                <AttributesList attributes={savingThrowData} title="Спасброски" />
-                                                <AttributesList attributes={skillsData} title="Навыки" />
+                                            <ColumnGrid spacing={1}>
+                                                <Grid item>
+                                                    <HorizontalSingleStat statDescription="Вдохновение" />
+                                                </Grid>
+                                                <Grid item>
+                                                    <HorizontalSingleStat statDescription="Бонус мастерства" />
+                                                </Grid>
+                                                <Grid item>
+                                                    <AttributesList attributes={savingThrowData} title="Спасброски" />
+                                                </Grid>
+                                                <Grid item>
+                                                    <AttributesList attributes={skillsData} title="Навыки" />
+                                                </Grid>
                                             </ColumnGrid>
                                         </Grid>
                                     </Grid>
                                 </Grid>
 
                                 <Grid item>
-                                    <HorizontalSingleStat key={1312} statDescription="пассивная мудрость (внимательность)" />
+                                    <HorizontalSingleStat statDescription="пассивная мудрость (внимательность)" />
                                 </Grid>
                                 <MediumTextFieldGridItem fieldDescription="Прочие владения и языки" />
                             </ColumnGrid>

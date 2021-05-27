@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import "./attributesList.css";
+import "../../commonCSS/component_center-align.css"
 import { HorizontalSingleStat } from "../horizontalSingleStat/HorizontalSingleStat";
 import classNames from "classnames";
 
@@ -10,7 +11,10 @@ type Props = {
 
 export function AttributesList(props: Props): ReactElement {
     const attributesList = props.attributes.map((value, index) => (
-        <HorizontalSingleStat key={index} statDescription={value} />));
+        <li key={index} >
+            <HorizontalSingleStat statDescription={value} />
+        </li>
+    ));
     return (
         <div className={classNames("attributes-list_solid-border", "attributes-list_margin")}>
             <ul className="attributes-list_none-marker">

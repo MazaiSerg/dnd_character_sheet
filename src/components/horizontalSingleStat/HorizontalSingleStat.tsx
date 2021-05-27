@@ -7,7 +7,6 @@ import "../verticalSingleStat/smallButton.css";
 import "../../commonCSS/component_small-font.css";
 
 type Props = {
-  key: number
   statDescription: string
 }
 
