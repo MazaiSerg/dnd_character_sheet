@@ -17,7 +17,7 @@ export function BasicStatsList(): ReactElement {
             container
             direction="column"
             justify="space-between"
-            spacing={1}
+            spacing={2}
         >
             {stats}
         </Grid>

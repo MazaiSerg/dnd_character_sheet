@@ -3,7 +3,6 @@ import React, { ReactElement } from "react";
 
 import { SmallTextField } from "../smallTextField/SmallTextField";
 
-import "../verticalSingleStat/smallButton.css";
 import "../../commonCSS/component_small-font.css";
 
 type Props = {

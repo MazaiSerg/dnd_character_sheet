@@ -2,3 +2,22 @@
     border: 2px solid #282c34;
     border-radius: 10%;
 }
+
+.common-stats-elements__vertical-container .common-small-button_width {
+    transform: translateY(15px);
+    border: 2px solid #282c34;
+    border-radius: 50%;
+}
+
+.common-small-button_width input {
+    font-size: 14px;
+    text-align: center;
+    background-color: var(--input-field-background-color);
+    border: 2px solid #989c94;
+    border-radius: 50%;
+}
+
+p.throw-bonus__element {
+    line-height: 2rem;
+    transform: translateY(8px);
+}
