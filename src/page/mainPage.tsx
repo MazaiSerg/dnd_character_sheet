@@ -7,7 +7,6 @@ import { InputForm } from "../components/inputForm/InputForm";
 import { BasicStatsList } from "../components/basicStatsList/BasicStatsList";
 import { HorizontalSingleStat } from "../components/horizontalSingleStat/HorizontalSingleStat";
 import { AttributesList } from "../components/attributesList/AttributesList";
-import { savingThrowData, skillsData } from "../data/skillsData";
 import { MediumTextFieldGridItem } from "../components/mediumTextField/MediumTextFieldGridItem";
 import { Inventory } from "../components/inventory/Inventory";
 import { Weapons } from "../components/weapons/Weapons";
@@ -15,8 +14,10 @@ import { BasicFightStats } from "../components/basicFightStats/BasicFightStats";
 import { HitPoints } from "../components/hitPoints/HitPoints";
 import { AdditionalVitalityInformation } from "../components/additionalVitalityInformation/AdditionalVitalityInformation";
 import { ColumnGrid } from "../components/columnGrid/ColumnGrid";
+import { useCommonTranslation } from "../i18n";
 
 export function MainPage(): ReactElement {
+    const { t } = useCommonTranslation();
     return (
         <Container
             className="character-sheet__container"
@@ -36,19 +37,19 @@ export function MainPage(): ReactElement {
                         wrap="nowrap"
                     >
                         <Grid item xs={5}>
-                            <InputForm className="" description="Имя персонажа" />
+                            <InputForm className="" description={t("name") as string} />
                         </Grid>
                         <Grid item xs={10}>
                             <Grid
                                 container
                                 wrap="wrap"
                             >
-                                <InputForm className="component_width-33-percents" description="Класс" />
-                                <InputForm className="component_width-33-percents" description="Предыстория" />
-                                <InputForm className="component_width-33-percents" description="Уровень" />
-                                <InputForm className="component_width-33-percents" description="Раса" />
-                                <InputForm className="component_width-33-percents" description="Мировоззрение" />
-                                <InputForm className="component_width-33-percents" description="Опыт" />
+                                <InputForm className="component_width-33-percents" description={t("characterClass") as string} />
+                                <InputForm className="component_width-33-percents" description={t("backStory") as string} />
+                                <InputForm className="component_width-33-percents" description={t("level") as string} />
+                                <InputForm className="component_width-33-percents" description={t("race") as string} />
+                                <InputForm className="component_width-33-percents" description={t("augment") as string} />
+                                <InputForm className="component_width-33-percents" description={t("experiencePoints") as string} />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -80,10 +81,10 @@ export function MainPage(): ReactElement {
                                                     <HorizontalSingleStat statDescription="Бонус мастерства" />
                                                 </Grid>
                                                 <Grid item>
-                                                    <AttributesList attributes={savingThrowData} title="Спасброски" />
+                                                    <AttributesList attributes={t('savingThrowData') as string[]} title="Спасброски" />
                                                 </Grid>
                                                 <Grid item>
-                                                    <AttributesList attributes={skillsData} title="Навыки" />
+                                                    <AttributesList attributes={t('skillsData') as string[]} title="Навыки" />
                                                 </Grid>
                                             </ColumnGrid>
                                         </Grid>
