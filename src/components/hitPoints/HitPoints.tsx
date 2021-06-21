@@ -1,13 +1,10 @@
 import React, { ReactElement } from "react";
 import { Grid, TextField } from "@material-ui/core";
+import { ColumnGrid } from "../columnGrid/ColumnGrid";
 
 export function HitPoints(): ReactElement {
     return (
-        <Grid
-            container
-            direction="column"
-            spacing={1}
-        >
+        <ColumnGrid spacing={1}>
             <Grid item>
                 <TextField
                     fullWidth
@@ -34,6 +31,6 @@ export function HitPoints(): ReactElement {
                     variant="outlined"
                 />
             </Grid>
-        </Grid>
+        </ColumnGrid>
     );
 }

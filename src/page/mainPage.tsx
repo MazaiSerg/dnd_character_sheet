@@ -1,142 +1,140 @@
 import React, { ReactElement } from "react";
 import { Container, Grid } from "@material-ui/core";
 
-import "../commonCSS/component_width-30-percents.css";
+import "../commonCSS/component_width-33-percents.css";
 
 import { InputForm } from "../components/inputForm/InputForm";
 import { BasicStatsList } from "../components/basicStatsList/BasicStatsList";
 import { HorizontalSingleStat } from "../components/horizontalSingleStat/HorizontalSingleStat";
 import { AttributesList } from "../components/attributesList/AttributesList";
-import { savingThrowData, skillsData } from "../data/skillsData";
 import { MediumTextFieldGridItem } from "../components/mediumTextField/MediumTextFieldGridItem";
 import { Inventory } from "../components/inventory/Inventory";
 import { Weapons } from "../components/weapons/Weapons";
 import { BasicFightStats } from "../components/basicFightStats/BasicFightStats";
 import { HitPoints } from "../components/hitPoints/HitPoints";
 import { AdditionalVitalityInformation } from "../components/additionalVitalityInformation/AdditionalVitalityInformation";
+import { ColumnGrid } from "../components/columnGrid/ColumnGrid";
+import { useCommonTranslation } from "../i18n";
 
-export function MainPage() : ReactElement {
+export function MainPage(): ReactElement {
+    const { t } = useCommonTranslation();
     return (
         <Container
             className="character-sheet__container"
             maxWidth="md"
         >
-            <Grid
-                container
-                className="character-sheet-header__container"
-                direction="row"
-                wrap="nowrap"
-            >
-                <Grid item xs={5}>
-                    <InputForm className="" description="Имя персонажа" />
-                </Grid>
-                <Grid item xs={10}>
-                    <Grid
-                        container
-                        wrap="wrap"
-                    >
-                        <InputForm className="component_width-30-percents" description="Класс" />
-                        <InputForm className="component_width-30-percents" description="Предыстория" />
-                        <InputForm className="component_width-30-percents" description="Уровень" />
-                        <InputForm className="component_width-30-percents" description="Раса" />
-                        <InputForm className="component_width-30-percents" description="Мировоззрение" />
-                        <InputForm className="component_width-30-percents" description="Опыт" />
-                    </Grid>
-                </Grid>
-            </Grid>
-
-            <Grid
-                container
-                direction="row"
-                spacing={5}
-                wrap="nowrap"
+            <ColumnGrid
+                withoutBackground
+                spacing={2}
             >
                 <Grid item>
                     <Grid
                         container
-                        direction="column"
-                        spacing={3}
+                        align-items="flex-end"
+                        className="character-sheet-header__container"
+                        direction="row"
+                        justify="space-between"
+                        wrap="nowrap"
                     >
-                        <Grid item>
+                        <Grid item xs={5}>
+                            <InputForm className="" description={t("name") as string} />
+                        </Grid>
+                        <Grid item xs={10}>
                             <Grid
                                 container
-                                direction="row"
-                                spacing={3}
-                                wrap="nowrap"
+                                wrap="wrap"
                             >
+                                <InputForm className="component_width-33-percents" description={t("characterClass") as string} />
+                                <InputForm className="component_width-33-percents" description={t("backStory") as string} />
+                                <InputForm className="component_width-33-percents" description={t("level") as string} />
+                                <InputForm className="component_width-33-percents" description={t("race") as string} />
+                                <InputForm className="component_width-33-percents" description={t("augment") as string} />
+                                <InputForm className="component_width-33-percents" description={t("experiencePoints") as string} />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="space-between"
+                    >
+                        <Grid item>
+                            <ColumnGrid>
                                 <Grid item>
-                                    <BasicStatsList />
-                                </Grid>
-                                <Grid item xs={10}>
                                     <Grid
                                         container
-                                        direction="column"
+                                        direction="row"
+                                        spacing={3}
+                                        wrap="nowrap"
                                     >
-                                        <HorizontalSingleStat key={123121312} statDescription="Вдохновение" />
-                                        <HorizontalSingleStat key={1121312} statDescription="Бонус мастерства" />
-                                        <AttributesList attributes={savingThrowData} title="Спасброски" />
-                                        <AttributesList attributes={skillsData} title="Навыки" />
+                                        <Grid item>
+                                            <BasicStatsList />
+                                        </Grid>
+                                        <Grid item xs={10}>
+                                            <ColumnGrid spacing={1}>
+                                                <Grid item>
+                                                    <HorizontalSingleStat statDescription="Вдохновение" />
+                                                </Grid>
+                                                <Grid item>
+                                                    <HorizontalSingleStat statDescription="Бонус мастерства" />
+                                                </Grid>
+                                                <Grid item>
+                                                    <AttributesList attributes={t('savingThrowData') as string[]} title="Спасброски" />
+                                                </Grid>
+                                                <Grid item>
+                                                    <AttributesList attributes={t('skillsData') as string[]} title="Навыки" />
+                                                </Grid>
+                                            </ColumnGrid>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
-                            </Grid>
-                        </Grid>
 
-                        <Grid item>
-                            <HorizontalSingleStat key={1312} statDescription="пассивная мудрость (внимательность)" />
-                        </Grid>
-                        <MediumTextFieldGridItem fieldDescription="Прочие владения и языки" />
-                    </Grid>
-                </Grid>
-                <Grid item xs={4}>
-                    <Grid
-                        container
-                        direction="column"
-                        spacing={3}
-                    >
-                        <Grid
-                            container
-                            direction="column"
-                            spacing={3}
-                        >
-                            <Grid item><BasicFightStats /></Grid>
-                            <Grid item><HitPoints /></Grid>
-                            <Grid item><AdditionalVitalityInformation /></Grid>
-                        </Grid>
-
-                        <Grid item>
-                            <Grid
-                                container
-                                direction="column"
-                                spacing={2}
-                            >
                                 <Grid item>
-                                    <Weapons />
+                                    <HorizontalSingleStat statDescription="пассивная мудрость (внимательность)" />
                                 </Grid>
-                                <MediumTextFieldGridItem fieldDescription="Заклинания" />
-                            </Grid>
+                                <MediumTextFieldGridItem fieldDescription="Прочие владения и языки" />
+                            </ColumnGrid>
                         </Grid>
+                        <Grid item xs={4}>
+                            <ColumnGrid>
+                                <Grid item>
+                                    <ColumnGrid>
+                                        <Grid item><BasicFightStats /></Grid>
+                                        <Grid item><HitPoints /></Grid>
+                                        <Grid item><AdditionalVitalityInformation /></Grid>
+                                    </ColumnGrid>
+                                </Grid>
 
-                        <Grid item><Inventory /></Grid>
-                    </Grid>
-                </Grid>
-                <Grid item>
-                    <Grid
-                        container
-                        direction="column"
-                        spacing={3}
-                    >
-                        <Grid item>
-                            <Grid>
-                                <MediumTextFieldGridItem fieldDescription="Черты характера" />
-                                <MediumTextFieldGridItem fieldDescription="Идеалы" />
-                                <MediumTextFieldGridItem fieldDescription="Привязанности" />
-                                <MediumTextFieldGridItem fieldDescription="Слабости" />
-                            </Grid>
+                                <Grid item>
+                                    <ColumnGrid>
+                                        <Grid item>
+                                            <Weapons />
+                                        </Grid>
+                                        <MediumTextFieldGridItem fieldDescription="Заклинания" />
+                                    </ColumnGrid>
+                                </Grid>
+
+                                <Grid item><Inventory /></Grid>
+                            </ColumnGrid>
                         </Grid>
-                        <MediumTextFieldGridItem fieldDescription="умения и особенности" />
+                        <Grid item>
+                            <ColumnGrid>
+                                <Grid item>
+                                    <ColumnGrid spacing={1}>
+                                        <MediumTextFieldGridItem fieldDescription="Черты характера" />
+                                        <MediumTextFieldGridItem fieldDescription="Идеалы" />
+                                        <MediumTextFieldGridItem fieldDescription="Привязанности" />
+                                        <MediumTextFieldGridItem fieldDescription="Слабости" />
+                                    </ColumnGrid>
+                                </Grid>
+                                <MediumTextFieldGridItem fieldDescription="умения и особенности" />
+                            </ColumnGrid>
+                        </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
+            </ColumnGrid>
         </Container>
     );
 }

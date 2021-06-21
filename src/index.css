@@ -15,4 +15,6 @@ code {
 :root {
     --small-font-size: 10px;
     --basic-element-height: 20px;
+    --grid-column-background-color: #f0f0f0;
+    --input-field-background-color: #ffffff;
 }
